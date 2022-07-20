@@ -1,0 +1,330 @@
+body{
+            
+			background-image: url(../image/top_bg.png);
+            background-repeat: no-repeat;
+			background-size:100% 1500px;
+			height:100%;
+        }
+        
+        header{
+            height: 100px;
+            margin: 8px 16px 0px;
+            line-height: 40px;
+        }
+        header #logo{
+            float: left;
+        }
+        header #logo h1{
+            font-size: 0px;
+			background-image: url(../image/logo.png);
+			background-size: 146px 68px;
+			background-repeat: no-repeat;
+			background-position: center;
+			display: inline-block;
+			width: 180px;
+			height: 80px;
+        }
+
+        header nav{
+        float: right;  
+        margin-top: 18px;  
+        }
+        header nav ul{
+
+        }
+        header nav ul li{
+            width: 128px;
+            height: 48px;
+            margin: 0px 6px;
+            padding: 8px;
+            border: 3px solid #FFFFFF;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        header nav ul li a{
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        main{
+           
+        }
+        main .page1{ 
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			flex-direction:column;
+			height:100%;
+			padding-top:160px;
+        }
+        main .page1 p{
+           font-size: 66px; 
+           font-weight: bold;
+        }
+        main .page1 .box{
+          margin-top: 28px;  
+        }
+        main .page1 .box ul > li{
+            width: 128px;
+            height: 48px;
+            margin: 0px 6px;
+            padding: 10px;
+            border-radius: 4px;
+            box-sizing: border-box;  
+            background-color: black;
+        }
+        main .page1 .box ul > li > a{
+            color: #FFFFFF;
+            font-size: 18px;
+        }
+        main .page1 .arrow_icon{
+            text-align: center; 
+            width: 100px;
+            height: 40px;
+            background-image: url(../image/arrow_icon.png);
+			background-size: 80px 40px;
+			background-repeat: no-repeat;
+			background-position: center;
+			display: inline-block;
+            margin: 100px 0px;
+        }
+        
+        main .page2{
+           font-size: 40px; 
+           text-align: center;
+           margin-top: 200px; 
+           font-weight: 600;
+		   margin-bottom:300px;
+        }
+
+		main .page3{ 
+			justify-content:center;
+			align-items:center;
+			display:flex;
+            height: 1200px;
+		   margin-bottom:300px;
+		}
+		main .page3 .box1{ 
+			justify-content:center;
+			align-items:center;
+			display:flex;
+			flex-direction:column;
+			width:40%;
+			height:1200px;
+			margin-top:300px;
+		}
+        main .page3 .intro{
+          font-weight: 600;
+          font-size: 50px;
+          text-align: left;
+        }
+		main .page3 .box1 .img{ 
+            background-image: url(../image/img1.png);
+			background-size: 90% 100%;
+			background-repeat: no-repeat;
+			width:100%;
+			height:80%;
+		}
+		main .page3 .box2{ 
+			justify-content:center;
+			align-items:center;
+			display:flex;
+			flex-direction:column;
+			width:40%;
+			height:1200px;
+		}
+        main .page3 .box2 .img{
+            background-image: url(../image/img2.png);
+			background-size: 90% 100%;
+			background-repeat: no-repeat;
+			width:100%;
+			height:80%;
+        }
+        main .page3 .service{ 
+			position:relative;
+            text-align: left; 
+			top:-190px;
+        }
+        main .page3 .service .service_nav{
+            font-weight: 600;
+        }
+        main .page3 .service .service_nav ul > li > a{
+            margin: 0px 20px 0 0;
+            font-size: 18px;
+        }
+        main .page3 .service .ment{
+            font-size: 24px;
+            margin-top: 10px;
+            text-align: left; 
+        }
+
+        main .page4{
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			height:400px;
+			width:100%;
+			margin-bottom:200px;
+        }
+		main .page4 .box1{ 
+			display:flex;
+			align-items:center;
+			width:40%;
+			height:600px;
+		}
+        main .page4 .box1 .img{
+            background-image: url(../image/img3.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			width:80%;
+			height:60%;
+        }
+        main .page4 .box2 {
+			display:flex;
+			flex-direction:column;
+        }
+        main .page4 .box2 .intro{ 
+			font-weight: 600;
+			font-size: 50px;
+			text-align:left;
+        }
+
+        main .page4 .box2 .ment{
+            font-size: 24px;
+            margin-top: 10px;
+            text-align: left; 
+        }
+
+        main .page5{
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			height:650px;
+			width:100%; 
+			margin-bottom:200px;
+        }
+		main .page5 .box1{ 
+			margin-left:10%;
+			display:flex;
+			width:50%;
+			flex-direction:column;
+			justify-content:center;
+			align-items:center;
+		}
+        main .page5 .intro{
+			width: 602px;
+			height: 154px;
+			font-weight: 600;
+			font-size: 50px;
+			text-align: left;
+        }
+        main .page5 .service{
+            text-align: left;
+        }
+        main .page5 .service .service_nav{
+            font-weight: 400;
+            
+        }
+        main .page5 .service .service_nav ul > li > a{
+            margin: 0px 10px;
+            font-size: 18px;
+        }
+        main .page5 .service .ment{
+            font-size: 24px;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+		main .page5 .box2{ 
+			display:flex;
+			align-items:center;
+			width:50%;
+			height:650px;
+		}
+        main .page5 .box2 .img{ 
+			width:80%;
+			height:60%;
+            background-image: url(../image/img4.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+        }
+
+        main .page6{
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			height:400px;
+			width:100%;
+			margin-bottom:200px;
+        }
+		main .page6 .box1{ 
+			display:flex;
+			align-items:center;
+			width:40%;
+			height:600px;
+		}
+        main .page6 .box1 .img{
+            background-image: url(../image/img5.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			width:80%;
+			height:60%;
+        }
+        main .page6 .box2 {
+			display:flex;
+			flex-direction:column;
+        }
+        main .page6 .box2 .intro{ 
+			font-weight: 600;
+			font-size: 50px;
+			text-align:left;
+        }
+
+        main .page6 .box2 .ment{
+            font-size: 24px;
+            margin-top: 10px;
+            text-align: left; 
+        }
+        main .page7{
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			height:600px;
+			width:100%;
+			margin-bottom:200px;
+        }
+		main .page7 .box1{ 
+			display:flex;
+			align-items:center;
+			width:40%;
+			height:600px;
+		}
+        main .page7 .box1 .img{
+            background-image: url(../image/img6.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			width:80%;
+			height:120%;
+        }
+        main .page7 .box2 {
+			display:flex;
+			flex-direction:column;
+        }
+        main .page7 .box2 .intro{ 
+			font-weight: 600;
+			font-size: 50px;
+			text-align:left;
+        }
+		main .outro{ 
+			position:relative;
+			bottom:300px;
+			z-index:-1;
+		} 
+        footer{ 
+			position:relative;
+			bottom:300px;
+            height: 200px;
+            text-align: left;
+            background-color: #444444;
+            color: white;
+            padding: 50px;
+        }

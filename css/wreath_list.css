@@ -1,0 +1,124 @@
+@font-face{
+	font-family: 'Pretendard';
+	src:url('../font/PretendardVariable.woff2') format('woff2'),
+	    url('../font/PretendardVariable.woff2') format('truetype');
+}
+body{ 
+	font-family:'pretendard';
+	background: linear-gradient(180deg, #F3B368 0%, rgba(155, 154, 153, 0.35) 53.68%, rgba(255, 255, 255, 0) 105.16%);
+	background-position:center top;
+	background-repeat: no-repeat;
+	background-size:100vw 130vh;
+    height:700vh;
+    margin:0px;
+    padding:0px;
+}
+header{
+    height: 1.5%;
+    margin: 2.5% 0 ;
+    width:100%;
+}
+header .logo{
+    height:1%;
+    margin-left:8%;
+}
+main{
+    height:4%;
+    width:100%;
+    display:flex;
+    align-items: center;
+}
+main div{
+    margin:0 0 0% 9%;
+}
+main div span:first-child{
+    font-size:3.3em;
+    font-weight:700;
+}
+main div span:last-child{
+    font-size:1.4em;
+    line-height: 2;
+}
+section{
+    height:91.2%;
+    width:100%;	
+    background: url(../image/bottom_bg.png);
+	background-position:center bottom;
+	background-repeat: no-repeat;
+	background-size:100vw 80vh;
+}
+article{
+    height:10.6%;
+    width:100%;
+    display:flex;
+}
+article img{
+    display:block;
+    max-height:67%;
+    width:auto;
+}
+article .img_container{
+    max-width:25%;
+    max-height:100%;
+    margin:0 5% 1% 9%;
+    display: flex;
+    flex-direction: column-reverse;
+
+}
+article .info_box{
+    display:flex;
+    align-items: flex-end;
+    width:50%;
+}
+article div table{
+    width:100%;
+    height:60%;
+}
+article div table tr:nth-child(1) span{
+    padding-left:30px;
+    font-size:2.5em;
+    font-weight: 700;
+}
+article div table tr:nth-child(1) img{
+    width:100%;
+    height:90%;
+}
+article div table tr:nth-child(2) .sale_price{
+    font-weight: 700;
+    padding-left:30px;
+    font-size:2.8em;
+    color:#444444;
+}
+article div table tr:nth-child(2) .discount{
+    padding-left:5%;
+    font-weight: 200;
+    font-size:2.5em;
+    color:#F3B368;
+}
+article div table tr:nth-child(3) span{
+    padding-left:30px;
+    color:#444444;
+    font-size:2em;
+}
+article div table tr:nth-child(3) td{
+    vertical-align: top;
+    text-decoration: line-through;
+    text-decoration-color: #444444;
+}
+article div table tr:nth-child(4) td{
+    padding-left:30px;
+}
+article div table tr:nth-child(4) td div{
+    
+    padding:12px;
+    text-align: center;
+    border:none;
+    border-radius: 5px;
+    background-color:#F3B368 ;
+    color:white;
+    font-size:1.7em;
+    cursor:pointer;
+}
+.bottom_bg{
+    height:4%;
+}

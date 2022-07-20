@@ -1,0 +1,306 @@
+body {
+    background-image: url(../image/flower.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* .container {
+    width: 70%;
+    height: 200px;
+    overflow: hidden;
+} */
+
+.container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.maincontain {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    max-width: 100%;
+    margin: 0px auto;
+    width: 50vh;
+
+
+}
+
+
+
+body .mainHeader {
+    display: flex;
+    flex-direction: column;
+    margin: 0% auto;
+    width: 50vh;
+    color: black;
+    font-size: 30px;
+}
+
+
+.mainHeader .header_a {
+    display: flex;
+    font-size: 14px;
+}
+
+
+/* deceased (고인정보) */
+.deceased {
+    display: flex;
+    flex-direction: row;
+}
+
+.di {
+    margin-top: 40px;
+}
+
+.deceased .deceased_1 {
+    margin: 0%;
+}
+
+.deceased .deceased_1 .placeName {
+    margin-top: 10px;
+    border-radius: 2px;
+    padding: 10px;
+    width: 49%;
+    border: 1px solid rgb(209, 208, 208);
+}
+
+.deceased .deceased_1 .deceasedName {
+    margin-top: 10px;
+    border-radius: 2px;
+    padding: 10px;
+    width: 49%;
+    border: 1px solid rgb(209, 208, 208);
+}
+
+.deceased .deceased_1 .age {
+    border-radius: 2px;
+    padding: 10px;
+    width: 10%;
+    border: 1px solid rgb(209, 208, 208);
+}
+
+.deceased .deceased_1 .duty {
+    margin-top: 10px;
+    border-radius: 2px;
+    padding: 10px;
+    width: 49%;
+    border: 1px solid rgb(209, 208, 208);
+}
+
+/* 사진 등록(Sub), 삭제 버튼(Del) */
+.SubAndDel {
+    margin-top: 10px;
+    max-width: 60vh;
+    display: flex;
+    justify-content: end;
+}
+
+.SubAndDel .submit {
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 5px;
+    color: darkgrey;
+    border: 1px solid rgb(209, 208, 208);
+}
+
+.SubAndDel .delete {
+    cursor: pointer;
+    border-radius: 2px;
+    margin-left: 10px;
+    padding: 5px;
+    color: darkgrey;
+    border: 1px solid rgb(209, 208, 208);
+}
+
+/* funeral (장례정보) */
+.funeral {
+    margin-top: 40px;
+    color: darkgrey;
+}
+
+.f_i {
+    color: black;
+}
+
+.funeral .passAwayD {
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 2px;
+    border: 1px solid rgb(209, 208, 208);
+    padding: 10px;
+    width: 25%;
+    color: darkgrey;
+    cursor: pointer;
+}
+
+.funeral .passAwayT {
+    margin-top: 10px;
+    border-radius: 2px;
+    border: 1px solid rgb(209, 208, 208);
+    padding: 9px;
+    width: 25%;
+    color: darkgrey;
+    cursor: pointer;
+}
+
+.funeral .buriedD {
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 2px;
+    border: 1px solid rgb(209, 208, 208);
+    padding: 10px;
+    width: 25%;
+    color: darkgrey;
+    cursor: pointer;
+}
+
+.funeral .buriedT {
+    margin-top: 10px;
+    border-radius: 2px;
+    border: 1px solid rgb(209, 208, 208);
+    padding: 9px;
+    width: 25%;
+    color: darkgrey;
+    cursor: pointer;
+}
+
+.funeral .coffinD {
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 2px;
+    border: 1px solid rgb(209, 208, 208);
+    padding: 10px;
+    width: 25%;
+    color: darkgrey;
+    cursor: pointer;
+}
+
+.funeral .coffinT {
+    margin-top: 10px;
+    border-radius: 2px;
+    border: 1px solid rgb(209, 208, 208);
+    padding: 9px;
+    width: 25%;
+    color: darkgrey;
+    cursor: pointer;
+}
+
+/* cemetery & Word (장지&상주말씀) */
+.cemetery {
+    margin-top: 20px;
+    color: darkgrey;
+}
+
+.cemetery .cemeteryT {
+    width: 100%;
+    border-radius: 2px;
+    padding: 7px;
+    margin-top: 7px;
+    border: 1px solid rgb(209, 208, 208);
+}
+
+.Word {
+    margin-top: 10px;
+    color: darkgrey;
+}
+
+.Word .residentWord {
+    width: 100%;
+    border-radius: 2px;
+    padding: 7px;
+    margin-top: 7px;
+    border: 1px solid rgb(209, 208, 208);
+}
+
+
+/* resident (대표상주)*/
+.resident {
+    margin-top: 40px;
+    max-width: 100%;
+}
+
+.resident .ri {
+    display: flex;
+    justify-content: space-between;
+}
+
+.resident .ri .addResident {
+    background-color: sandybrown;
+    border-radius: 2px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.resident .residentName {
+    margin-top: 10px;
+    border-radius: 2px;
+    padding: 10px;
+    width: 59%;
+    border: 1px solid rgb(209, 208, 208);
+}
+
+.resident .residentPhone {
+    border-radius: 2px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 59%;
+    border: 1px solid rgb(209, 208, 208);
+}
+
+
+/* select 태그 */
+select {
+    border: 1px solid rgb(209, 208, 208);
+    border-radius: 2px;
+    padding-left: 5px;
+}
+
+.placeChoice {
+    color: darkgrey;
+    cursor: pointer;
+}
+
+.age {
+    color: darkgrey;
+    cursor: pointer;
+}
+
+.sex {
+    color: darkgrey;
+    cursor: pointer;
+}
+
+.relation {
+    color: darkgrey;
+    cursor: pointer;
+}
+
+
+/* 완료 버튼 */
+.makeObituary {
+    display: flex;
+    justify-content: center;
+    background-color: sandybrown;
+    padding: 10px;
+    margin-top: 40px;
+    border-radius: 3px;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+
+    a:link {
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: black;
+    }
+}

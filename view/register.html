@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--<link type="text/css" rel="stylesheet" media="(max-width:700px)" href="css/main_mobile.css">-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link type="text/css" rel="stylesheet" media="(min-width:700px)" href="../css/register.css"></link>
+		<meta charset="UTF-8">
+		<title>회원가입</title>
+	</head>
+	<body oncontextmenu="false" ondragstart="false" onselectstart="false">
+		
+		<form method="post" action="http://www.aedo.kr/v1/user">
+			<table>
+				<tr>
+					<td class="title">회원가입</td>
+				</tr>
+				<tr>
+					<td class="title_description">최소한의 정보를 받고있습니다.</td>
+				</tr>
+				<tr>
+					<td class="input_name" id="input_name">이름&nbsp;&nbsp;<span></span></td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" name="name" class="name" id="name" autocomplete="off" placeholder="이름"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="input_name" id="input_birth">생년월일&nbsp;&nbsp;<span></span></td>
+				</tr>
+				<tr>
+					<td>
+						<input type="date" name="birth" class="birth" id="birth"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="input_name" id="input_phone">전화번호&nbsp;&nbsp;<span></span></td>
+				</tr>
+				<tr>
+					<td class="phone_container">
+						<input type="text" name="phone" class="phone" disabled id="phone" autocomplete="off" placeholder="전화번호(-없이)"/>
+					</td>
+				</tr>
+				<tr class="term_content">
+					<td>
+						<div class="term_content_box">
+							<label for="terms" class="terms_lb">
+								<input type="checkbox" name="terms" class="terms" id="terms" />
+								<img class="terms_img"/>
+								전체동의&nbsp;&nbsp;<span></span>
+							</label>
+							<br/>
+							<div class="terms_bar">
+								"애도"개인정보 고유식별 번호 등의 이용약관
+								<img class="terms_bar_img" src="../image/arrow_top_up_icon.png"/>
+							</div>
+							<div class="term_text">
+								‘애도' 부고 작성 및 화환 구매(이하 동칭하여‘서비스'라 함) 을 제공하기 위하여 아래와 같이 고유식별 정보를 수집, 이용하고 있습니다.
+								<br/>1. 개인정보를 제공받는 자 : 통신사(에스케이텔레콤㈜, ㈜케이티, LG유플러스 등), PG사(㈜다날, ㈜케이에스넷)
+								<br/>2. 개인정보를 제공받는 자의 개인정보 이용 목적 : 연계정보(CI)/중복가입확인정보(DI) 생성 및 제공
+								<br/>3. 제공하는 개인정보 항목: 주민등록번호, 외국인등록번호, 휴대폰번호
+								<br/>4. 개인정보를 제공받는 자의 개인정보 보유 및 이용기간 : 연계정보(CI)/중복가입확인정보(DI) 생성 후 즉시 폐기
+								<br/>5.본인은 동의를 거부할 권리가 있으며, 동의하지 않으실 경우 서비스를 이용하실 수 없습니다.
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><div id="submit_btn" class="submit_btn" onclick="submit_regi();">회원가입</div></td>
+				</tr>
+			</table>
+		</form>
+		
+		<script type="text/javascript" src="../script/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="../script/register.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</body>
+</html>
