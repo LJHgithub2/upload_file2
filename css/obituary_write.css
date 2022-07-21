@@ -26,7 +26,7 @@ input[type="date"]{
     width:56%;
     margin-left:5%;
 }
-.file_label div{
+.file_btn div{
     border:1px solid rgb(124, 124, 124);
     background-color: rgb(230, 230, 230);
     text-align: center;
@@ -47,21 +47,25 @@ input, select{
     background: #ffffff;
     width:86%;
     padding:12px;
+    color:#aaaaaa;
 }
 input:focus ,select:focus, textarea:focus{
     outline:none;
     border:1px solid #6666ad;
+}
+.deceased_info input,.deceased_info select{
+    width:38%;
+}
+.funeral_name{
+    width:92%;
 }
 .deceased_img{
     background-image:url("../image/deceased_img.png");
     background-position: center;
     height:100%;
     width:100%;
-
-}
-button{
-    width:100%;
-    padding:3px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .title_text{
 	font-size:2em;
@@ -86,7 +90,7 @@ button{
 .residency{
     width:63%;
     height:70%;
-    margin-bottom:10%;
+    margin-bottom:3%;
 }
 .add_residency{
     float:right;
@@ -108,12 +112,20 @@ button{
 }
 .residency_item .first select{
     float:right;
-    color:#aaaaaa;
     width:37%;
 }
-.residency_item .first select option[value=""][disabled]{
+select option[value=""][disabled]{
     display:none;
 }
 .residency_item .second input{
     width:55%;
+}
+.submit{
+    width:63%;
+    background-color: #F3B368;
+    margin-bottom:10%;
+    color:white;
+    text-align: center;
+    padding:10px 0;
+    cursor: pointer;
 }
