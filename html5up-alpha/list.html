@@ -37,8 +37,27 @@
 						<p>삼가 故人의 명복을 빕니다.</p>
 					</header>
 					<div class="box">
-						<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
-						<h3>목록</h3>
+						
+						<div class="search">
+							<div class="search subtitle_text">통합검색&nbsp&nbsp<input type="text" id="search_text">&nbsp&nbsp<span onclick="search()">검색</span></div>
+						</div>
+						<main class="main_container" id="main_container">
+							<div class="item_sample">
+								<div class="head">
+									<div class="info">
+										<span>인천기독병원장례식장3호실</span>
+										<br>故 
+										<span>고송준 (55세)</span>
+									</div>
+									<div class="btn_container">
+										<div class="btn" onclick="view_detail(this);">상세보기</div>
+										<div class="btn">수정</div>
+										<div class="btn">공유</div>
+									</div>
+								</div>
+							</div>
+						</main>
+						<div class="add_item_btn" onClick="add_list()">더보기</div>
 					</div>
 				</section>
 
@@ -52,7 +71,7 @@
 								<span>대표자(성명) : 박인호</span> <br/>
 								<span>사업자 등록번호 안내 : 448-92-01531</span><br/>
 								<span>통신판매업 신고: 제 2022-전남 구례-9호</span><br/>
-								 <span class="{$cpo_email|display}">개인정보보호책임자 : 청란플라워</a></span><br/>
+								<span class="{$cpo_email|display}">개인정보보호책임자 : 청란플라워</a></span><br/>
 							</div>
 						</div>
 						<ul class="util">
@@ -77,6 +96,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/list.js"></script>
 
 	</body>
 </html>
