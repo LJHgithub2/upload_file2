@@ -472,6 +472,10 @@
 			width: 75%;
 		}
 
+		.row > .col-10 {
+			width: 85%;
+		}
+
 		.row > .off-9 {
 			margin-left: 75%;
 		}
@@ -2369,7 +2373,7 @@
 /* Box */
 
 	.box {
-		background: rgb(255, 255, 255);
+		background: #fff;
 		border-radius: 6px;
 		box-shadow: 0 2px 0 0 #e5e5e5;
 		margin: 0 0 2em 0;
@@ -4228,24 +4232,6 @@
     .xans-mall-faq .contents { padding:20px 16px 0; }
 }
 
-/********************* 종현 ******************************/
-.user_info{
-	width:300px;
-	position:absolute;
-	font-weight: bold;
-	color:rgb(110, 108, 108);
-}
-#logout{
-	cursor:pointer;
-}
-footer {
-	height: 200px;
-	background-color: #444444;
-	color: white;
-	padding: 50px 0;
-	text-align:center;
-}
-/***************** list page css 종현********************/
 .search{
     float:right;
     display:flex;
@@ -4353,4 +4339,59 @@ footer {
 	color:black;
 	font-weight:bold;
 	font-size:1em;
+}
+/* 종현 */
+.submit_btn{
+	text-align: center;
+	padding:9px 2em;
+	background-color:rgb(105, 104, 104);
+	color:white;
+	font-size:1em;
+	border-radius: 6px;
+	cursor:pointer;
+}
+.submit_btn:hover{
+	background-color:rgb(112, 112, 112);
+	transition:background-color 0.3s;
+}
+.user_id{
+	display:none;
+}
+
+/* 종현 detail_view*/
+.detail_box{
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 0 0 #e5e5e5;
+    margin: 0 0 2em 0;
+}
+.title{
+	border:1px solid black;
+	height:25vh;
+	width:100%;
+	background-image: url(../css/images/images.jpg);
+	color:rgb(255, 255, 255);
+}
+.title .title1{
+	display:flex;
+	align-items: center;
+    justify-content: center;
+	font-size:3em;
+	font-weight:bold;
+	border:1px solid rgb(0, 0, 0);
+	height:60%;
+	width:100%;
+}
+.title .title2{
+	text-align:center;
+	border:1px solid white;
+	height:20%;
+	width:100%;
+	font-size:1.5em;
+}
+.title .title3{
+	text-align:center;
+	border:1px solid white;
+	height:20%;
+	width:100%;
 }

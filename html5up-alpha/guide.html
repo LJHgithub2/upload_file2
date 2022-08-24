@@ -13,21 +13,22 @@
 
 			<!-- Header -->
 			<header id="header" class="alts">
-				<h1><a href="index.html">애도</a> 이용안내</h1>
+				<h1><a href="index.html">애도</a> 이용안내&nbsp;&nbsp;&nbsp;&nbsp;<span class="user_info" id="user_info" style="left:5em;"></span></h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="index.html">홈</a></li>
 							<li>
 								<a href="#" class="icon solid fa-angle-down">메뉴</a>
 								<ul>
-									<li><a href="list.html">부고목록</a></li>
-									<li><a href="upload.html">부고작성</a></li>
-									<li><a href="order.html">화환주문</a></li>
-									<li><a href="notice.html">공지사항</a></li>
+									<li><a href=""><div onclick="nav_click('list.html');">부고목록</div></a></li>
+									<li><a href=""><div onclick="nav_click('upload.html');">부고작성</div></a></li>
+									<li><a href=""><div onclick="nav_click('order.html');">화환주문</div></a></li>
+									<li><a href="notice.html">공지사항</a></li>	
 
 								</ul>
 							</li>
-							<li><a href="#" class="button">로그인</a></li>
+							<li><a href="login.html" class="button" id="login_btn">로그인</a></li>
+							<li><a class="button" id="logout_btn"><div id="logout">로그아웃</div></a></li>						
 						</ul>
 					</nav>
 				</header>

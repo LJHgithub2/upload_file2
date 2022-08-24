@@ -1,5 +1,6 @@
 var IMP = window.IMP; 
 IMP.init("imp00383227");
+var flower = ($("#import_flower"));
 
 function requestPay() {
     // IMP.request_pay(param, callback) 결제창 호출
@@ -7,8 +8,8 @@ function requestPay() {
         pg: "html5_inicis",
         pay_method: "card",
         merchant_uid: "ORD20180131-0000011",
-        name: "노르웨이 회전 의자",
-        amount: 64900,
+        name: flower,
+        amount: 77000,
         buyer_email: "gildong@gmail.com",
         buyer_name: "홍길동",
         buyer_tel: "010-4242-4242",

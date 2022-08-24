@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
+
 		<div id="page-wrapper">
 			<!-- Header -->
 			<header id="header" class="alts">
@@ -20,7 +21,7 @@
 								<li><a href=""><div onclick="nav_click('list.html');">부고목록</div></a></li>
 								<li><a href=""><div onclick="nav_click('upload.html');">부고작성</div></a></li>
 								<li><a href=""><div onclick="nav_click('order.html');">화환주문</div></a></li>
-								<li><a href="notice.html">공지사항</a></li>
+								<li><a href="notice.html">상세보기</a></li>
 							</ul>
 						</li>
 						<li><a href="login.html" class="button" id="login_btn">로그인</a></li>
@@ -32,51 +33,19 @@
 			<!-- list -->
 				<section id="main" class="container">
 					<header>
-						<h2>부고목록</h2>
+						<h2>상세보기</h2>
 						<p>삼가 故人의 명복을 빕니다.</p>
 					</header>
-					<div class="box">
-						<h3>목록</h3>
-						<!-- <div class="search">
-							<div class="search subtitle_text">통합검색<input type="text" id="search_text">&nbsp&nbsp<span onclick="search()">검색</span></div>
-						</div> -->
-						<div class="row gtr-50 gtr-uniform">
-							<div class="col-9 col-12-mobilep">
-								<input type="text" name="email" id="search_text" placeholder="통합검색" />
-							</div>
-							<div class="col-3 col-12-mobilep">
-								<input type="submit" value="검색" class="fit" onclick="search()" />
-							</div>
-						</div>
-						
-						<main class="main_container" id="main_container">
-							<div class="item_sample">
-
-								<div class="head">
-									<div class="info">
-										<span>인천기독병원장례식장3호실</span>
-										<br>故 
-										<span>고송준 (55세)</span>
-									</div>
-									
-									<div class="btn_container">
-										<div class="user_id"></div>
-										<div class="btn" onclick="view_detail(this);">상세보기</div>
-										<div class="btn">수정</div>
-										<div class="btn">공유</div>
-										<!-- <ul class="actions small">
-											<li><a href="#" class="button special small">Small</a></li>
-											<li><a href="#" class="button small">Small</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul> -->
-									</div>
-
-								</div>
-
-							</div>
-						</main>
-						<div class="add_item_btn" onClick="add_list()">더보기</div>
-					</div>
+					<div class="detail_box">
+						<div class="title">
+                            <div class="title1">訃告</div>
+                            <div class="title2">
+                                故 <span>이름</span> (<span>나이</span> / <span>성별</span>)
+                            </div>
+                            <div class="title3">
+                                <span>2022년 08월 24일</span> 별세
+                            </div>
+                        </div>
 					</div>
 				</section>
 
@@ -90,7 +59,7 @@
 								<span>대표자(성명) : 박인호</span> <br/>
 								<span>사업자 등록번호 안내 : 448-92-01531</span><br/>
 								<span>통신판매업 신고: 제 2022-전남 구례-9호</span><br/>
-								 <span class="{$cpo_email|display}">개인정보보호책임자 : 청란플라워</a></span><br/>
+								<span class="{$cpo_email|display}">개인정보보호책임자 : 청란플라워</a></span><br/>
 							</div>
 						</div>
 						<ul class="util">
@@ -105,8 +74,6 @@
 				</div>
 			</footer>
 
-		</div>
-
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
@@ -115,7 +82,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="assets/js/list/list.js"></script>
+			<script src="assets/js/list/detail_view.js"></script>
 
 
 	</body>

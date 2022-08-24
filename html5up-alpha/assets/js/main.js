@@ -79,7 +79,6 @@
 
 var login_check=false;
 window.onload = function () {
-	console.log("dd");
 	fetch("https://www.aedo.co.kr/v1/user",{
 		method:"get", 
 		headers: {
