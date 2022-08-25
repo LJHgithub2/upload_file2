@@ -42,7 +42,6 @@ function upload_submit(){
 			'Accesstoken':sessionStorage.getItem('Accesstoken'),
 		},
         body:JSON.stringify({
-			img:$("#input-file").val(),
 			relation:$("#relation").val(),
 			residentName:$("#ceo_name").val(),
 			residentphone:"010-8834-2360",
@@ -56,6 +55,7 @@ function upload_submit(){
 			word:$("#upload_noti").val(),
 			created:"3-23",
         }),
+		body:
 	})
 	.then((res)=>res.json())
 	.then((data) =>{
@@ -67,6 +67,7 @@ function upload_submit(){
 			console.log(data);
 		}
 	});
+	$("#form").submit();
 }
 
 

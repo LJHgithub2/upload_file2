@@ -4369,7 +4369,7 @@
 	border:1px solid black;
 	height:25vh;
 	width:100%;
-	background-image: url(../css/images/images.jpg);
+	background-image: url(../css/images/images1.jpg);
 	color:rgb(255, 255, 255);
 }
 .title .title1{
@@ -4378,20 +4378,61 @@
     justify-content: center;
 	font-size:3em;
 	font-weight:bold;
-	border:1px solid rgb(0, 0, 0);
 	height:60%;
 	width:100%;
 }
 .title .title2{
 	text-align:center;
-	border:1px solid white;
 	height:20%;
 	width:100%;
 	font-size:1.5em;
 }
 .title .title3{
 	text-align:center;
-	border:1px solid white;
 	height:20%;
 	width:100%;
+}
+.main{
+	margin:5em;
+	color:black;
+	padding-bottom: 2em;
+}
+.img_contain{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.img_contain .img_box{
+	margin-bottom: 2em;
+	border:1px solid black;
+	width: 22%;
+	height:20vh;
+	padding:2px;
+}
+.img_contain .img_box .img{
+	width:100%;
+	height:100%;
+	background-image:url(../../images/check-box.png);
+	background-size:cover;
+}
+.resident_contain,.deceased_info{
+	font-size:1.3em;
+	line-height:2;
+}
+.word_box{
+	width:100%;
+	font-size:1em;
+	font-weight:bold;
+	background-color:rgba(82, 82, 82, 0.836);
+	color:white;
+	margin-top:10px;
+    border-radius: 6px;
+	padding:5px;
+}
+.word_box:hover{
+	background-color:rgba(92, 92, 92, 0.836);
+	transition:background-color 0.2s;
+}
+.main hr{
+	border:1px solid rgba(136, 135, 135, 0.836)
 }
