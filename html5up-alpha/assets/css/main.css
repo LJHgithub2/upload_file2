@@ -4282,35 +4282,46 @@
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px white;
 }
+.box_size{
+    margin: 13px;
+    background-color: #f7f6f6;
+    height: 50vh;
+    border-radius: 13px;
+}
 .main_container{
     clear:both;
     display:flex;
-	height:50vh;
-    flex-wrap: nowrap;
-    align-items: center;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: baseline;
     overflow-y:auto;
-    margin-bottom: 2%;;
+    padding-bottom: 2%;
+	max-height:50vh;
 }
 .main_container .item_sample{
 	display:none;
 }
 .main_container .item{
+	border-radius:10px;
     flex:0 0 auto;
-    margin-top:20px;
-    width:90%;
-    border:none;
-    background-color: #fff3e6;
-    box-shadow: 1px 1px 1px 1px gray;
+    margin:20px 0 0 3%;
+    width:45%;
+	border-bottom: 1px dotted rgb(104, 103, 103);
+	border-top: 1px dotted rgb(104, 103, 103);
+    background-color: #fff7ee;
+    color:#696868cc;
+}
+.main_container .item:hover{
+	background-color:#fae4cb;
+	color:#5c5c5cf0;
 }
 .main_container .item .head{
-    color:#464646cc;
     font-weight: bold;
     height: 7vh;
     display:flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+	padding:0 5%;
 }
 .main_container .item .head .btn_container{
     display:flex;
@@ -4327,20 +4338,30 @@
     color:rgb(44, 44, 44);
     font-weight: bold;
     margin:0px 5px;
-
+}
+.btn_container .btn:hover{
+    background-color: rgb(255, 187, 0);
+    -webkit-transition:background-color 0.2s;
+    transition:background-color 0.2s;
 }
 .box .add_item_btn{
 	text-align:center;
-	width:100%;
-	border:1px solid black;
-	padding:10px 0;
+	width:30%;
+	border-radius: 5px;
+	padding:15px 0;
 	cursor:pointer;
-	background-color: orange;
-	color:black;
+	background-color: #f3b368;
+    border: 2px solid #a4782382;
+	color:rgb(255, 255, 255);
 	font-weight:bold;
-	font-size:1em;
+	font-size:0.9em;
+	margin:0 auto;
 }
-/* 종현 */
+.box .add_item_btn:hover{
+	background-color: #7e7e7e;
+    -webkit-transition:background-color 0.3s;
+    transition:background-color 0.3s;
+}
 .submit_btn{
 	text-align: center;
 	padding:9px 2em;

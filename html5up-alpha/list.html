@@ -9,27 +9,27 @@
 	<body class="is-preload">
 		<div id="page-wrapper">
 			<!-- Header -->
-			<header id="header" class="alts">
-				<h1><a href="index.html">애도</a> 공지사항&nbsp;&nbsp;&nbsp;&nbsp;<span class="user_info" id="user_info" style="left:5em;"></span></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html">홈</a></li>
-						<li>
-							<a href="#" class="icon solid fa-angle-down">메뉴</a>
-							<ul>
-								<li><a href=""><div onclick="nav_click('list.html');">부고목록</div></a></li>
-								<li><a href=""><div onclick="nav_click('upload.html');">부고작성</div></a></li>
-								<li><a href=""><div onclick="nav_click('order.html');">화환주문</div></a></li>
-								<li><a href="notice.html">공지사항</a></li>
-							</ul>
-						</li>
-						<li><a href="login.html" class="button" id="login_btn">로그인</a></li>
-						<li><a class="button" id="logout_btn"><div id="logout">로그아웃</div></a></li>
-				</ul>
-				</nav>
+				<header id="header" class="alts">
+					<h1><a href="index.html">애도</a> 부고목록&nbsp;&nbsp;&nbsp;&nbsp;<span class="user_info" id="user_info" style="left:5em;"></span></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">홈</a></li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">메뉴</a>
+								<ul>
+									<li><a href=""><div onclick="nav_click('list.html');">부고목록</div></a></li>
+									<li><a href=""><div onclick="nav_click('upload.html');">부고작성</div></a></li>
+									<li><a href=""><div onclick="nav_click('order.html');">화환주문</div></a></li>
+									<li><a href="notice.html">공지사항</a></li>	
+								</ul>
+							</li>
+							<li><a href="login.html" class="button" id="login_btn">로그인</a></li>
+							<li><a class="button" id="logout_btn"><div id="logout">로그아웃</div></a></li>
+	
+						</ul>
+					</nav>
 				</header>
 
-			<!-- list -->
 				<section id="main" class="container">
 					<header>
 						<h2>부고목록</h2>
@@ -37,9 +37,6 @@
 					</header>
 					<div class="box">
 						<h3>목록</h3>
-						<!-- <div class="search">
-							<div class="search subtitle_text">통합검색<input type="text" id="search_text">&nbsp&nbsp<span onclick="search()">검색</span></div>
-						</div> -->
 						<div class="row gtr-50 gtr-uniform">
 							<div class="col-9 col-12-mobilep">
 								<input type="text" name="email" id="search_text" placeholder="통합검색" />
@@ -49,36 +46,28 @@
 							</div>
 						</div>
 						
-						<main class="main_container" id="main_container">
-							<div class="item_sample">
-
-								<div class="head">
-									<div class="info">
-										<span>인천기독병원장례식장3호실</span>
-										<br>故 
-										<span>고송준 (55세)</span>
+						<main class="box_size" id="box_size">
+							<div class="main_container" id="main_container">
+								<div class="item_sample">
+									<div class="head">
+										<div class="info">
+											<span>인천기독병원장례식장3호실</span>
+											<br>故 
+											<span>고송준 (55세)</span>
+										</div>
+										
+										<div class="btn_container">
+											<div class="user_id"></div>
+											<div class="btn" onclick="view_detail(this);">상세보기</div>
+										</div>
 									</div>
-									
-									<div class="btn_container">
-										<div class="user_id"></div>
-										<div class="btn" onclick="view_detail(this);">상세보기</div>
-										<div class="btn">수정</div>
-										<div class="btn">공유</div>
-										<!-- <ul class="actions small">
-											<li><a href="#" class="button special small">Small</a></li>
-											<li><a href="#" class="button small">Small</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul> -->
-									</div>
-
 								</div>
-
 							</div>
 						</main>
-						<div class="add_item_btn" onClick="add_list()">더보기</div>
-					</div>
+						<div class="add_item_btn" onClick="add_list()">10개 항목 더보기</div>
 					</div>
 				</section>
+
 
 			<!-- Footer -->
 			<footer id="footer">
@@ -116,7 +105,5 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/list/list.js"></script>
-
-
 	</body>
 </html>

@@ -40,10 +40,11 @@
 						<header>
 							<h3>고인 정보</h3>
 						</header>
+						<form method="post" action="#">
 							<div class="row gtr-50 gtr-uniform">
 
 								<div class="place-1 address">
-									<input type="text" id="funeral_name" name="place" placeholder="* 장례식장 이름" class="read_only" readonly></td>
+									<input type="text" id="funeral_name" name="funeral_name" placeholder="* 장례식장 이름" class="read_only" readonly></td>
 								</div>
 
 								<div class="place-2 address">
@@ -57,11 +58,11 @@
 								</div>
 
 								<div class="upload-1">
-									<input type="text" id="mortuary" name="deceasedName" placeholder="* 고인 명">
+									<input type="text" id="mortuary" name="mortuary" placeholder="* 고인 명">
 								</div>
 
 								<div class="upload-2">
-									<input type="text" name="deceasedAge" id="deceasedAge" placeholder="* 나이">
+									<input type="text" placeholder="* 나이">
 								</div>
 
 								<div class="upload-2">									
@@ -73,25 +74,28 @@
 							</div>
 						
 						</div>
+						</form>
 
-							<form method="post" name="form" action="https://www.aedo.co.kr/v1/obituary" id="form" enctype="multipart/form-data">
+						<form method="post" action="#">
 							<div class="file_btn">
 								<label for="input-file">
-									<input type="file" id="input-file" name="img" accept="image/*" class="file">
+									<input type="file" id="input-file" accept="image/*" class="file">
 								</label>
-							</div>
-							</form>
 							
+							</div>
+							
+						</form>
 					</div>
 
 					<div class="box">
 						<header>
 							<h3>장례 정보</h3>
 						</header>
+						<form method="post" action="#">
 							<div class="row gtr-50 gtr-uniform">
 								<p>임종</p>
 								<div class="date-1 ">
-									<input type="date" name="eod" id="date_first"/>
+									<input type="date" name="date_first" id="date_first"/>
 								</div>
 								<div class="date-1 ">
 									<input type="time" name="time_first" id="time_first" />
@@ -101,7 +105,7 @@
 							<div class="row gtr-50 gtr-uniform">
 								<p>입관</p>
 								<div class="date-1 ">
-									<input type="date" name="coffin" id="date_second"/>
+									<input type="date" name="date_second" id="date_second"/>
 								</div>
 								<div class="date-1 ">
 									<input type="time" name="time_second" id="time_second" />
@@ -111,7 +115,7 @@
 							<div class="row gtr-50 gtr-uniform">
 								<p>발인</p>
 								<div class="date-1 ">
-									<input type="date" name="dofp" id="date_second"/>
+									<input type="date" name="date_second" id="date_second"/>
 								</div>
 								<div class="date-1 ">
 									<input type="time" name="time_second" id="time_second" />
@@ -121,66 +125,39 @@
 							<div class="row gtr-50 gtr-uniform">
 								<p>장지</p>
 								<div class="date-1 ">
-									<input type="text" name="buried" id="place_name" placeholder="장지를 입력해 주세요"/>
+									<input type="text" name="place_name" id="place_name" placeholder="장지를 입력해 주세요"/>
 								</div>
 							</div>
 
 							<div class="row gtr-50 gtr-uniform">
 								<p>안내</p>
 								<div class="noti-1 ">
-									<input type="text" name="word" id="upload_noti" placeholder="예시) 코로나로 인해 조문은 사양합니다."/>
+									<input type="text" name="upload_noti" id="upload_noti" placeholder="예시) 코로나로 인해 조문은 사양합니다."/>
 								</div>
 							</div>
 
+						</form>
 					</div>
 
 					<div class="box">
 						<header>
 							<h3>대표 상주 <div class="add_residency">상주추가</div> </h3>
 						</header>
+						<form method="post" action="#">
 							<div class="row gtr-50 gtr-uniform "> 
 								<div class="row residency">
 									<div class="residency_item1 residency_item">
 										<div class="name-1 ">
-											<input type="text" name="residentName" id="ceo_name" placeholder="상주 명" />
+											<input type="text" name="ceo_name" id="ceo_name" placeholder="상주 명" />
 											
 										</div>
 										<br/>
 
 										<div class="name-2">
-											<select required name="relation" id="relation">
+											<select required name="">
 												<option value="" disabled selected>관계</option>
-												<option value="배우자">배우자</option>
-												<option value="아들">아들</option>
-												<option value="딸">딸</option>
-												<option value="며느리">며느리</option>
-												<option value="사위">사위</option>
-												<option value="손">손</option>
-												<option value="손자">손자</option>
-												<option value="손녀">손녀</option>
-												<option value="외손">외손</option>
-												<option value="외손자">외손자</option>
-												<option value="외손녀">외손녀</option>
-												<option value="손부">손부</option>
-												<option value="손서">손서</option>
-												<option value="외손부">외손부</option>
-												<option value="외손서">외손서</option>
-												<option value="상주">상주</option>
-												<option value="조카">조카</option>
-												<option value="형제">형제</option>
-												<option value="자매">자매</option>
-												<option value="부">부</option>
-												<option value="모">모</option>
-												<option value="형">형</option>
-												<option value="동생">동생</option>
-												<option value="형수">형수</option>
-												<option value="제수">제수</option>
-												<option value="처남">처남</option>
-												<option value="매제">매제</option>
-												<option value="매형">매형</option>
-												<option value="누나">누나</option>
-												<option value="언니">언니</option>
-												<option value="남매">남매</option>
+												<option value="">부</option>
+												<option value="">모</option>
 											</select>
 										</div>
 										<br/>
@@ -189,9 +166,10 @@
 							</div>
 							<div class="col-12">
 								<ul class="actions special">
-									<li><div class="submit_btn" onclick="upload_submit()">부고 등록</div></li>
+									<li><input type="submit" value="부고 등록" /></li>
 								</ul>
 							</div>
+						</form>
 
 					</div>
 

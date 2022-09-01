@@ -7,14 +7,14 @@
 		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 
-	
+
 	<body class="is-preload">
 		<div id="page-wrapper">
 			<header id="header" class="alts">
 				<h1><a href="../index.html">애도</a> 주문하기&nbsp;&nbsp;&nbsp;&nbsp;<span class="user_info" id="user_info" style="left:5em;"></span></h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="../index.html">홈</a></li>
+							<li><a href="../index.html"s>홈</a></li>
 							<li>
 								<a href="#" class="icon solid fa-angle-down">메뉴</a>
 								<ul>
@@ -38,9 +38,13 @@
 
 					<div class="box">
 						<header id="flower_info">
-							<h3>상품명 : <span>[근조]3단 화환 1호</span></h3></br>
-							<h3>가격 : <span>77,000</span>원 </3>
+							<h3> <div id='flower_name'>[근조]3단 화환 1호</div></h3></br>
 						</header>
+
+						<header id = "flower_pays">
+							<h3><div id='flower_pay'>1000원</div></h3>
+						</header>
+						
 					</div>
 
 					<div class="box">
@@ -66,7 +70,7 @@
 								</div>
 
 								<div class="col-6 col-12-mobilep">
-									<input type="text" name="recive_phone" id="recive_email" value="" placeholder="받으시는분 연락처" />
+									<input type="text" name="recive_phone" id="recive_phone" value="" placeholder="받으시는분 연락처" />
 								</div>
 							</div>
 						</form>
@@ -84,7 +88,7 @@
 								</div>
 
 								<div class="place-2 address">
-									<select id="funeral_name_select" required>
+									<select id="funeral_name_select" name="funeral_name_select" required>
 										<option value="">장례식장 선택</option>
 										<option>구례산림 조합 장례식장</option>
 										<option>구례 병원 장례식장</option>
@@ -137,7 +141,7 @@
 								</div>
 							</div>
 						</form>
-						<input type="login_button" id="login_button" value="주문 하기" class="fit" />
+						<input type="login_button" id="login_button" value="주문 하기" class="fit" onclick="requestPay()" />
 
 					</div>
 

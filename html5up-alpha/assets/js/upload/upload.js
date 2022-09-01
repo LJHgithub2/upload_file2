@@ -10,6 +10,7 @@ window.onload = function() {
 };
 $("#funeral_name_select").change(function(){
     $("#funeral_name").val($(this).val());
+	validation();
 })
 
 function readImage(evt){ 
@@ -34,41 +35,7 @@ function deleteImage(){
     $("#input-file").val(null);
 
 };
-function upload_submit(){
-	fetch("https://www.aedo.co.kr/v1/obituary",{
-		method:"POST", 
-		headers: {
-			"Content-Type": "application/json",
-			'Accesstoken':sessionStorage.getItem('Accesstoken'),
-		},
-        body:JSON.stringify({
-			relation:$("#relation").val(),
-			residentName:$("#ceo_name").val(),
-			residentphone:"010-8834-2360",
-			deceasedName:$("#mortuary").val(),
-			deceasedAge:$("#deceasedAge").val(),
-			place:$("#funeral_name").val(),
-			eod:"3-23",
-			coffin:"3-23",
-			dofp:"3-23",
-			buried:$("#place_name").val(),
-			word:$("#upload_noti").val(),
-			created:"3-23",
-        }),
-		body:
-	})
-	.then((res)=>res.json())
-	.then((data) =>{
-		console.log(data);
-		if(Math.floor(data.status/100)==2){
-			console.log(data);
-		}
-		else{
-			console.log(data);
-		}
-	});
-	$("#form").submit();
-}
+
 
 
 (function($) {
@@ -152,6 +119,7 @@ function upload_submit(){
 
 var login_check=false;
 window.onload = function () {
+	console.log("dd");
 	fetch("https://www.aedo.co.kr/v1/user",{
 		method:"get", 
 		headers: {

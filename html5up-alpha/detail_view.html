@@ -11,7 +11,7 @@
 		<div id="page-wrapper">
 			<!-- Header -->
 			<header id="header" class="alts">
-				<h1><a href="index.html">애도</a> 공지사항&nbsp;&nbsp;&nbsp;&nbsp;<span class="user_info" id="user_info" style="left:5em;"></span></h1>
+				<h1><a href="index.html">애도</a> 상세보기&nbsp;&nbsp;&nbsp;&nbsp;<span class="user_info" id="user_info" style="left:5em;"></span></h1>
 				<nav id="nav">
 					<ul>
 						<li><a href="index.html">홈</a></li>
@@ -49,7 +49,7 @@
 						<div class="main">
 							<div class="img_contain">
 								<div class="img_box">
-									<div class="img"></div>
+									<div class="img"><img src = set_image()/></div>
 								</div>
 							</div>
 							<bold style="font-size:2em; font-weight:bold">상주</bold><hr>
@@ -66,9 +66,14 @@
 							<div class="word_contain">
 									안내사항 
 									<div class="word_box">안녕하세요</div>
-								
 							</div>
 						</div>
+					</div>
+					<div class="col-4">
+						<ul class="actions special">
+							<!-- <a id="kakao-link-btn" href="javascript:kakaoShare()">공유</a> -->
+							<li><input type="login_button" value="공유하기" onclick="kakaoShare()"/></li>
+						</ul>
 					</div>
 				</section>
 
@@ -106,7 +111,7 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/list/detail_view.js"></script>
-
-
+			<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+			<script src="assets/js/kakao/kakao.js"></script>
 	</body>
 </html>

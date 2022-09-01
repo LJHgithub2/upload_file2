@@ -46,24 +46,22 @@ function set_info(){
     ).appendTo($(".resident_contain"))
     set_image();
 }
+
 function set_image(){
     fetch("https://www.aedo.co.kr/v1/obituary/image?imgname="+info.imgName,{
 		method:"get", 
 		headers: {
-			"Content-Type": "multipart/form-data",
+			"Content-Type": "application/json",
 			'Accesstoken':sessionStorage.getItem('Accesstoken'),
 		},
 	})
 	.then((res)=>{
-        console.log(res.blob());
-        //$(".img").css("background-image","url("+info.imgName+")");
-    }).then((res) => {
-        console.log(res);
-        img=res;
+        console.log("이미지 받아오기",res.body.getReader);
+        $(".img").css("background-image","url("+info.imgName+")");
         img1 = document.createElement('img');
-img1.style = 'position:fixed;top:10px;left:10px;width:100px';
-document.body.append(img1);
-
-// 이미지를 화면에 보여줍니다.
-img1.src = URL.createObjectURL(img);})
+        img1.style = 'position:fixed;top:10px;left:10px;width:100px';
+        document.body.append(img1);
+        // 이미지를 화면에 보여줍니다.
+        img1.src = URL.createObjectURL(img);
+    })
 }
