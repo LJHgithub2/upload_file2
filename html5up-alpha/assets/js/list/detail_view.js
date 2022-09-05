@@ -20,6 +20,7 @@ $(document).ready(function(){
 	})
 	.then((res)=>res.json())
 	.then((data) =>{
+        console.log(user_id);
         for(i in data.result){
             if(data.result[i]._id==user_id){
                 info=data.result[i];
@@ -31,7 +32,6 @@ $(document).ready(function(){
     
 });
 function set_info(){
-    console.log(info);
     $(".title2").children().eq(0).text(info.deceased.name);
     $(".title2").children().eq(1).text(info.deceased.age);
     $(".title3").children().eq(0).text(info.eod);

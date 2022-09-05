@@ -36,8 +36,8 @@ window.onload = function () {
 }
 
 function view_detail(obj){
-    var place=escape($(obj).parent().parent().children().first().children().first().text());
-	location.href="detail_view.html?user_id="+$(obj).prev().text()+"&place="+place;
+    var place=escape($(obj).parent().parent().parent().children().first().children().first().text());
+	location.href="detail_view.html?user_id="+$(obj).parent().prev().text()+"&place="+place;
 }
 
 function search(){
@@ -84,7 +84,7 @@ function list_lookup(array){
         if(array.length>=list_count+add_num){     
             for(var i=list_count; i<list_count+add_num;i++){
                 deceased_name=array[i].deceased.name; 
-                var clone=$(".item_sample").clone().attr("class","item");
+                var clone=$(".item_sample").clone().attr("class","item box");
                 clone.children().children().children().first().text(array[i].place);
                 if (deceased_name.length>6) deceased_name=deceased_name.substr(0,7);
                 clone.children().children().children().eq(2).text(deceased_name+" ("+array[i].deceased.age+")");
