@@ -8,7 +8,9 @@
  	</head>
 	 <body class="is-preload">
 		<div id="page-wrapper">
-
+			<form action="https://www.aedo.co.kr/v1/obituary" id="form1" method="POST" enctype="multipart/form-data" Accesstoken="">
+			<input type="hidden" id="Accesstoken" name="Accesstoken" value="">
+			<input type="hidden" id="created" name="created" value="5시">
 			<!-- Header -->
 			<header id="header" class="alts">
 				<h1><a href="index.html">애도</a> 부고작성&nbsp;&nbsp;&nbsp;&nbsp;<span class="user_info" id="user_info" style="left:5em;"></span></h1>
@@ -40,15 +42,14 @@
 						<header>
 							<h3>고인 정보</h3>
 						</header>
-						<form method="post" action="#">
 							<div class="row gtr-50 gtr-uniform">
 
 								<div class="place-1 address">
-									<input type="text" id="funeral_name" name="funeral_name" placeholder="* 장례식장 이름" class="read_only" readonly></td>
+									<input type="text" id="funeral_name" name="place" placeholder="* 장례식장 이름" class="read_only" readonly></td>
 								</div>
 
 								<div class="place-2 address">
-									<select id="funeral_name_select" required>
+									<select id="funeral_name_select" name="" required>
 										<option value="">* 장례식장 선택</option>
 										<option>구례산 조합 장례식장</option>
 										<option>구례 병원 장례식장</option>
@@ -58,11 +59,11 @@
 								</div>
 
 								<div class="upload-1">
-									<input type="text" id="mortuary" name="mortuary" placeholder="* 고인 명">
+									<input type="text" id="mortuary" name="deceasedName" placeholder="* 고인 명">
 								</div>
 
 								<div class="upload-2">
-									<input type="text" maxlength='3' placeholder="* 나이">
+									<input type="text" maxlength='3' name="deceasedAge" placeholder="* 나이">
 								</div>
 
 								<div class="upload-2">									
@@ -74,26 +75,23 @@
 							</div>
 						
 						</div>
-						</form>
 
-						<form method="post" action="#">
 							<div class="file_btn">
 								<label for="input-file">
-									<input type="file" id="input-file" accept="image/*" class="file">
+									<input type="file" id="input-file" name="img" accept="image/*" class="file">
 								</label>
 							
 							</div>
 							
-						</form>
 					</div>
 
 					<div class="box">
 						<header>
 							<h3>장례 정보</h3>
 						</header>
-						<form method="post" action="#">
 							<div class="row gtr-50 gtr-uniform">
 								<p>임종</p>
+									<input type="text" name="eod" value="1시 5분">
 								<div class="date-1 ">
 									<input type="date" name="date_first" id="date_first"/>
 								</div>
@@ -104,6 +102,7 @@
 
 							<div class="row gtr-50 gtr-uniform">
 								<p>입관</p>
+								<input type="text" name="coffin" value="2시 5분">
 								<div class="date-1 ">
 									<input type="date" name="date_second" id="date_second"/>
 								</div>
@@ -114,6 +113,7 @@
 
 							<div class="row gtr-50 gtr-uniform">
 								<p>발인</p>
+								<input type="text" name="dofp" value="3시 5분">
 								<div class="date-1 ">
 									<input type="date" name="date_second" id="date_second"/>
 								</div>
@@ -125,39 +125,40 @@
 							<div class="row gtr-50 gtr-uniform">
 								<p>장지</p>
 								<div class="date-1 ">
-									<input type="text" maxlength='1000' name="place_name" id="place_name" placeholder="장지를 입력해 주세요"/>
+									<input type="text" maxlength='1000' name="buried" id="place_name" placeholder="장지를 입력해 주세요"/>
 								</div>
 							</div>
 
 							<div class="row gtr-50 gtr-uniform">
 								<p>안내</p>
 								<div class="noti-1 ">
-									<input type="text" name="upload_noti" id="upload_noti" placeholder="예시) 코로나로 인해 조문은 사양합니다."/>
+									<input type="text" name="word" id="upload_noti" placeholder="예시) 코로나로 인해 조문은 사양합니다."/>
 								</div>
 							</div>
 
-						</form>
 					</div>
 
 					<div class="box">
 						<header>
-							<h3>대표 상주 <div class="add_residency">상주추가</div> </h3>
+							<h3>대표 상주 <div class="add_residency">상주추가</div></h3>
 						</header>
-						<form method="post" action="#">
-							<div class="row gtr-50 gtr-uniform "> 
+							<div class="row gtr-50 gtr-uniform"> 
 								<div class="row residency">
 									<div class="residency_item1 residency_item">
 										<div class="name-1 ">
-											<input type="text" name="ceo_name" id="ceo_name" placeholder="상주 명" />
-											
+											<input type="text" name="residentName" id="residentName" placeholder="상주 명" />
+										</div>
+										<br/>
+										<div class="name-2 ">
+											<input type="text" name="residentphone" id="residentphone" placeholder="전화번호" />
 										</div>
 										<br/>
 
-										<div class="name-2">
-											<select required name="">
+										<div class="name-3">
+											<select required name="relation">
 												<option value="" disabled selected>관계</option>
-												<option value="">부</option>
-												<option value="">모</option>
+												<option value="father">부</option>
+												<option value="mother">모</option>
 											</select>
 										</div>
 										<br/>
@@ -169,12 +170,11 @@
 									<li><input type="submit" value="부고 등록" /></li>
 								</ul>
 							</div>
-						</form>
 
 					</div>
 
 				</section>
-
+			</form>
 				<footer id="footer">
 					<div class="inner">
 						<div module="Layout_footer">

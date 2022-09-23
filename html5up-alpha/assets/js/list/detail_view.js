@@ -20,7 +20,6 @@ $(document).ready(function(){
 	})
 	.then((res)=>res.json())
 	.then((data) =>{
-        console.log(user_id);
         for(i in data.result){
             if(data.result[i]._id==user_id){
                 info=data.result[i];
@@ -51,17 +50,17 @@ function set_image(){
     fetch("https://www.aedo.co.kr/v1/obituary/image?imgname="+info.imgName,{
 		method:"get", 
 		headers: {
-			"Content-Type": "application/json",
+			"Content-Type": "multipart/form-data",
 			'Accesstoken':sessionStorage.getItem('Accesstoken'),
 		},
 	})
-	.then((res)=>{
-        console.log("이미지 받아오기",res.body.getReader);
-        $(".img").css("background-image","url("+info.imgName+")");
-        img1 = document.createElement('img');
-        img1.style = 'position:fixed;top:10px;left:10px;width:100px';
-        document.body.append(img1);
-        // 이미지를 화면에 보여줍니다.
-        img1.src = URL.createObjectURL(img);
+	.then((res)=>res.blob())
+    .then((data)=> {
+        var objurl= window.URL.createObjectURL(data);
+        console.log(objurl);
     })
+	/*.then((res)=>{
+        console.log(res);
+        $(".img").css("background-image","url("+info.imgName+")");
+    })*/
 }

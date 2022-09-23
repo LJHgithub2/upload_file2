@@ -10,7 +10,6 @@ window.onload = function() {
 };
 $("#funeral_name_select").change(function(){
     $("#funeral_name").val($(this).val());
-	validation();
 })
 
 function readImage(evt){ 
@@ -119,7 +118,9 @@ function deleteImage(){
 
 var login_check=false;
 window.onload = function () {
-	console.log("dd");
+	$("#form1").attr("Accesstoken",sessionStorage.getItem('Accesstoken'));
+
+	$("#Accesstoken").val(sessionStorage.getItem('Accesstoken'));
 	fetch("https://www.aedo.co.kr/v1/user",{
 		method:"get", 
 		headers: {
@@ -130,6 +131,7 @@ window.onload = function () {
 	.then((res)=>res.json())
 	.then((data) =>{
 		if(Math.floor(data.status/100)==2){
+			$("#userId").val(data.user._id);
 			$("#login_btn").hide();
 			$("#user_info").text(data.user.phone+"님 환영합니다!");
 			login_check=true;
