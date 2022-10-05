@@ -118,8 +118,6 @@ function deleteImage(){
 
 var login_check=false;
 window.onload = function () {
-	$("#form1").attr("Accesstoken",sessionStorage.getItem('Accesstoken'));
-
 	$("#Accesstoken").val(sessionStorage.getItem('Accesstoken'));
 	fetch("https://www.aedo.co.kr/v1/user",{
 		method:"get", 
@@ -139,6 +137,34 @@ window.onload = function () {
 		else{
 			$("#logout_btn").hide();
 		}
+	});
+}
+function test(){
+	var formData = new FormData();
+	formData.append("imgName",$("#input-file")[0].files[0]);
+	formData.append("relation",$("#relation").val());
+	formData.append("residentName",$("#residentName").val());
+	formData.append("residentphone",$("#residentphone").val());
+	formData.append("deceasedName",$("#mortuary").val());
+	formData.append("deceasedAge",$("#deceasedAge").val());
+	formData.append("place",$("#funeral_name").val());
+	formData.append("eod","A");
+	formData.append("coffin","A");
+	formData.append("dofp","A");
+	formData.append("buried","A");
+	formData.append("word","A");
+	formData.append("created","A");
+	fetch("https://www.aedo.co.kr/v1/obituary",{
+		method:"post", 
+		headers: {
+			'Accesstoken':sessionStorage.getItem('Accesstoken'),
+			"Content-Type": "multipart/form-data",
+		},
+		body: formData,
+	})
+	.then((res)=>res.json())
+	.then((data) =>{
+		console.log(data);
 	});
 }
 $("#logout").click(function(){

@@ -1,15 +1,15 @@
- <!DOCTYPE HTML>
- <html lang="kr">
- 	<head>
- 		<title>부고작성</title>
- 		<meta charset="utf-8" />
- 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
- 		<link rel="stylesheet" href="assets/css/main.css" />
- 	</head>
-	 <body class="is-preload">
+<!DOCTYPE HTML>
+<html lang="kr">
+	<head>
+		<title>부고작성</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
 		<div id="page-wrapper">
-			<form action="https://www.aedo.co.kr/v1/obituary" id="form1" method="POST" enctype="multipart/form-data" Accesstoken="">
-			<input type="hidden" id="Accesstoken" name="Accesstoken" value="">
+			<form action="https://www.aedo.co.kr/v1/obituary" id="form1" enctype="multipart/form-data">
+			<button onclick="test();"></button>
 			<input type="hidden" id="created" name="created" value="5시">
 			<!-- Header -->
 			<header id="header" class="alts">
@@ -63,7 +63,7 @@
 								</div>
 
 								<div class="upload-2">
-									<input type="text" maxlength='3' name="deceasedAge" placeholder="* 나이">
+									<input type="text" maxlength='3' id="deceasedAge" name="deceasedAge" placeholder="* 나이">
 								</div>
 
 								<div class="upload-2">									
@@ -78,7 +78,7 @@
 
 							<div class="file_btn">
 								<label for="input-file">
-									<input type="file" id="input-file" name="img" accept="image/*" class="file">
+									<input type="file" id="input-file" name="imgName" accept="image/*" class="file">
 								</label>
 							
 							</div>
@@ -93,10 +93,10 @@
 								<p>임종</p>
 									<input type="text" name="eod" value="1시 5분">
 								<div class="date-1 ">
-									<input type="date" name="date_first" id="date_first"/>
+									<!--<input type="date" name="date_first" id="date_first"/>-->
 								</div>
 								<div class="date-1 ">
-									<input type="time" name="time_first" id="time_first" />
+									<!--<input type="time" name="time_first" id="time_first" />-->
 								</div>
 							</div>
 
@@ -104,10 +104,10 @@
 								<p>입관</p>
 								<input type="text" name="coffin" value="2시 5분">
 								<div class="date-1 ">
-									<input type="date" name="date_second" id="date_second"/>
+									<!--<input type="date" name="date_second" id="date_second"/>-->
 								</div>
 								<div class="date-1 ">
-									<input type="time" name="time_second" id="time_second" />
+									<!--<input type="time" name="time_second" id="time_second" />-->
 								</div>
 							</div>
 
@@ -115,10 +115,10 @@
 								<p>발인</p>
 								<input type="text" name="dofp" value="3시 5분">
 								<div class="date-1 ">
-									<input type="date" name="date_second" id="date_second"/>
+									<!--<input type="date" name="date_second" id="date_second"/>-->
 								</div>
 								<div class="date-1 ">
-									<input type="time" name="time_second" id="time_second" />
+									<!--<input type="time" name="time_second" id="time_second" />-->
 								</div>
 							</div>
 
@@ -155,10 +155,10 @@
 										<br/>
 
 										<div class="name-3">
-											<select required name="relation">
+											<select required name="relation" id="relation">
 												<option value="" disabled selected>관계</option>
-												<option value="father">부</option>
-												<option value="mother">모</option>
+												<option value="부">부</option>
+												<option value="모">모</option>
 											</select>
 										</div>
 										<br/>
@@ -167,7 +167,7 @@
 							</div>
 							<div class="col-12">
 								<ul class="actions special">
-									<li><input type="submit" value="부고 등록" /></li>
+									<li><input type="submit" value="부고 등록"/></li>
 								</ul>
 							</div>
 
