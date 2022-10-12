@@ -8,10 +8,6 @@
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
-			<form action="https://www.aedo.co.kr/v1/obituary" id="form1" enctype="multipart/form-data">
-			<button onclick="test();"></button>
-			<input type="hidden" id="created" name="created" value="5시">
-			<!-- Header -->
 			<header id="header" class="alts">
 				<h1><a href="index.html">애도</a> 부고작성&nbsp;&nbsp;&nbsp;&nbsp;<span class="user_info" id="user_info" style="left:5em;"></span></h1>
 				<nav id="nav">
@@ -30,9 +26,15 @@
 						<li><a class="button" id="logout_btn"><div id="logout">로그아웃</div></a></li>
 					</ul>
 				</nav>
-				</header>
+			</header>
+			<!-- Header -->
 
-			<!-- Main -->
+			<form id="form1" onsubmit="return test();" encType="multipart/form-data">
+				<input type="hidden" id="created" name="created" value="2022-10-08">
+				<input type="hidden" id="Accesstoken" name="Accesstoken" value="">
+
+
+				<!-- Main -->
 				<section id="main" class="container medium">
 					<header>
 						<h2>부고작성</h2>
@@ -45,11 +47,11 @@
 							<div class="row gtr-50 gtr-uniform">
 
 								<div class="place-1 address">
-									<input type="text" id="funeral_name" name="place" placeholder="* 장례식장 이름" class="read_only" readonly></td>
+									<input type="text" id="place_name" name="place_name" placeholder="* 장례식장 이름" class="read_only" readonly></td>
 								</div>
 
 								<div class="place-2 address">
-									<select id="funeral_name_select" name="" required>
+									<select id="funeral_name_select" required>
 										<option value="">* 장례식장 선택</option>
 										<option>구례산 조합 장례식장</option>
 										<option>구례 병원 장례식장</option>
@@ -59,18 +61,15 @@
 								</div>
 
 								<div class="upload-1">
-									<input type="text" id="mortuary" name="deceasedName" placeholder="* 고인 명">
+									<input type="text" id="deceasedName" name="deceasedName" placeholder="* 고인 명">
 								</div>
 
 								<div class="upload-2">
 									<input type="text" maxlength='3' id="deceasedAge" name="deceasedAge" placeholder="* 나이">
 								</div>
 
-								<div class="upload-2">									
-									<select required name="">
-									<option value="" disabled selected>* 성별</option>
-									<option>남</option>
-									<option>여</option>
+								<div class="upload-2">	
+									<input type="text" id="place_number" name="place_number" placeholder="장례식 호실">
 								</select>
 							</div>
 						
@@ -78,7 +77,7 @@
 
 							<div class="file_btn">
 								<label for="input-file">
-									<input type="file" id="input-file" name="imgName" accept="image/*" class="file">
+									<input type="file" id="input-file" name="img" accept="image/*" class="file">
 								</label>
 							
 							</div>
@@ -91,41 +90,38 @@
 						</header>
 							<div class="row gtr-50 gtr-uniform">
 								<p>임종</p>
-									<input type="text" name="eod" value="1시 5분">
 								<div class="date-1 ">
-									<!--<input type="date" name="date_first" id="date_first"/>-->
+									<input type="date" name="eod_date" id="eod_date"/>
 								</div>
 								<div class="date-1 ">
-									<!--<input type="time" name="time_first" id="time_first" />-->
+									<input type="time" name="eod_time" id="eod_time"/>
 								</div>
 							</div>
 
 							<div class="row gtr-50 gtr-uniform">
 								<p>입관</p>
-								<input type="text" name="coffin" value="2시 5분">
 								<div class="date-1 ">
-									<!--<input type="date" name="date_second" id="date_second"/>-->
+									<input type="date" name="coffin_date" id="coffin_date"/>
 								</div>
 								<div class="date-1 ">
-									<!--<input type="time" name="time_second" id="time_second" />-->
+									<input type="time" name="coffin_time" id="coffin_time"/>
 								</div>
 							</div>
 
 							<div class="row gtr-50 gtr-uniform">
 								<p>발인</p>
-								<input type="text" name="dofp" value="3시 5분">
 								<div class="date-1 ">
-									<!--<input type="date" name="date_second" id="date_second"/>-->
+									<input type="date" name="dofp_date" id="dofp_date"/>
 								</div>
 								<div class="date-1 ">
-									<!--<input type="time" name="time_second" id="time_second" />-->
+									<input type="time" name="dofp_time" id="dofp_time"/>
 								</div>
 							</div>
 
 							<div class="row gtr-50 gtr-uniform">
 								<p>장지</p>
 								<div class="date-1 ">
-									<input type="text" maxlength='1000' name="buried" id="place_name" placeholder="장지를 입력해 주세요"/>
+									<input type="text" maxlength='1000' name="buried" id="buried" placeholder="장지를 입력해 주세요"/>
 								</div>
 							</div>
 
@@ -175,6 +171,7 @@
 
 				</section>
 			</form>
+			
 				<footer id="footer">
 					<div class="inner">
 						<div module="Layout_footer">
@@ -184,7 +181,7 @@
 									<span>대표자(성명) : 박인호</span> <br/>
 									<span>사업자 등록번호 안내 : 448-92-01531</span><br/>
 									<span>통신판매업 신고: 제 2022-전남 구례-9호</span><br/>
-									 <span class="{$cpo_email|display}">개인정보보호책임자 : 청란플라워</a></span><br/>
+									<span class="{$cpo_email|display}">개인정보보호책임자 : 청란플라워</a></span><br/>
 								</div>
 							</div>
 							<ul class="util">

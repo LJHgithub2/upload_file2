@@ -1,3 +1,4 @@
+
 var item_num=1;
 $(".add_residency").click(function(){
     item_num+=1;
@@ -9,7 +10,7 @@ window.onload = function() {
     inputImage.addEventListener("change", readImage, false);
 };
 $("#funeral_name_select").change(function(){
-    $("#funeral_name").val($(this).val());
+    $("#place_name").val($(this).val());
 })
 
 function readImage(evt){ 
@@ -139,34 +140,6 @@ window.onload = function () {
 		}
 	});
 }
-function test(){
-	var formData = new FormData();
-	formData.append("imgName",$("#input-file")[0].files[0]);
-	formData.append("relation",$("#relation").val());
-	formData.append("residentName",$("#residentName").val());
-	formData.append("residentphone",$("#residentphone").val());
-	formData.append("deceasedName",$("#mortuary").val());
-	formData.append("deceasedAge",$("#deceasedAge").val());
-	formData.append("place",$("#funeral_name").val());
-	formData.append("eod","A");
-	formData.append("coffin","A");
-	formData.append("dofp","A");
-	formData.append("buried","A");
-	formData.append("word","A");
-	formData.append("created","A");
-	fetch("https://www.aedo.co.kr/v1/obituary",{
-		method:"post", 
-		headers: {
-			'Accesstoken':sessionStorage.getItem('Accesstoken'),
-			"Content-Type": "multipart/form-data",
-		},
-		body: formData,
-	})
-	.then((res)=>res.json())
-	.then((data) =>{
-		console.log(data);
-	});
-}
 $("#logout").click(function(){
     sessionStorage.setItem('Accesstoken', null);
 	location.href="index.html";
@@ -185,4 +158,36 @@ window.onpageshow = function (event) {
 		location.href = document.referrer;
     }
     
+}
+function test(){
+	const formData = new FormData();
+	formData.enctype="multipart/form-data";
+	var fileInput = document.querySelector("#input-file")
+
+	formData.append('img',fileInput.files[0]) ;
+	formData.append('relation',$("#relation").val());
+	formData.append('residentName',$("#residentName").val() );
+	formData.append('residentphone', $("#residentphone").val());
+	formData.append('deceasedName', $("#deceasedName").val());
+	formData.append('deceasedAge',$("#deceasedAge").val() );
+	formData.append('place_name',$("#place_name").val() );
+	formData.append('place_number', $("#place_number").val());
+	formData.append('eod_date', $("#eod_date").val());
+	formData.append('eod_time', $("#eod_time").val());
+	formData.append('coffin_date',$("#coffin_date").val() );
+	formData.append('coffin_time', $("#coffin_time").val());
+	formData.append('dofp_date', $("#dofp_date").val());
+	formData.append('dofp_time', $("#dofp_time").val());
+	formData.append('buried', $("#buried").val());
+	formData.append('word', $("#upload_noti").val());
+	formData.append('created', "2022-01-01");
+	fetch("https://www.aedo.co.kr/v1/obituary",{
+		method:"post", 
+		headers: {
+			'Accesstoken':sessionStorage.getItem('Accesstoken'),
+		},
+		body:formData
+	})
+	.then((res)=>console.log(res))
+	return false;
 }

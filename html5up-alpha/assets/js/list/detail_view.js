@@ -10,7 +10,8 @@ $(document).ready(function(){
         if(i==1)
         place=parameters[i].slice(parameters[i].indexOf('=')+1,parameters[i].length);
 	}
-    var address="https://www.aedo.co.kr/v1/obituary?name="+place;
+    console.log(place,user_id);
+    var address="https://www.aedo.co.kr/v1/obituary";
 	fetch(address,{
 		method:"get", 
 		headers: {
@@ -31,12 +32,13 @@ $(document).ready(function(){
     
 });
 function set_info(){
+    console.log(info);
     $(".title2").children().eq(0).text(info.deceased.name);
     $(".title2").children().eq(1).text(info.deceased.age);
-    $(".title3").children().eq(0).text(info.eod);
-    $(".deceased_info").children().eq(0).text(info.coffin);
-    $(".deceased_info").children().eq(2).text(info.dofp);
-    $(".deceased_info").children().eq(4).text(info.place);
+    $(".title3").children().eq(0).text(info.eod.date);
+    $(".deceased_info").children().eq(0).text(info.coffin.date+"  "+info.coffin.time);
+    $(".deceased_info").children().eq(2).text(info.dofp.date+"  "+info.dofp.time);
+    $(".deceased_info").children().eq(4).text(info.eod.date+"  "+info.eod.time);
     $(".deceased_info").children().eq(6).text(info.buried);
     $(".word_box").text(info.word);
     //for(var i=0;i<5;i++)
@@ -48,19 +50,21 @@ function set_info(){
 
 function set_image(){
     fetch("https://www.aedo.co.kr/v1/obituary/image?imgname="+info.imgName,{
-		method:"get", 
-		headers: {
-			"Content-Type": "multipart/form-data",
-			'Accesstoken':sessionStorage.getItem('Accesstoken'),
-		},
-	})
-	.then((res)=>res.blob())
-    .then((data)=> {
-        var objurl= window.URL.createObjectURL(data);
-        console.log(objurl);
+        method:"get", 
+        headers: {
+            "Content-Type": "multipart/form-data",
+            'Accesstoken':sessionStorage.getItem('Accesstoken'),
+        },
     })
-	/*.then((res)=>{
-        console.log(res);
-        $(".img").css("background-image","url("+info.imgName+")");
+    .then((res)=>console.log(res))
+    /*.then((data)=> {
+        const reader = new FileReader();
+        const blob = data;
+        reader.readAsDataURL(blob); 
+        var subblob=blob.slice(0,1024,"text/plain");
+        reader.onloadend = () => {
+            const base64data = reader.result;
+            $(".img").css('background-image',"url('"+base64data+"')");
+        }
     })*/
 }

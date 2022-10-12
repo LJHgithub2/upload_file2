@@ -30,7 +30,6 @@ window.onload = function () {
 	.then((res)=>res.json())
 	.then((data) =>{
         list_lookup(data.result);
-        console.log(data.result[0]._id);
 	});
     
 }
@@ -85,7 +84,7 @@ function list_lookup(array){
             for(var i=list_count; i<list_count+add_num;i++){
                 deceased_name=array[i].deceased.name; 
                 var clone=$(".item_sample").clone().attr("class","item box");
-                clone.children().children().children().first().text(array[i].place);
+                clone.children().children().children().first().text(array[i].place_name);
                 if (deceased_name.length>6) deceased_name=deceased_name.substr(0,7);
                 clone.children().children().children().eq(2).text(deceased_name+" ("+array[i].deceased.age+")");
                 clone.children().children().eq(1).children().first().text(array[i]._id);
@@ -97,7 +96,7 @@ function list_lookup(array){
             for(var i=list_count; i<array.length;i++){
                 deceased_name=array[i].deceased.name; 
                 var clone=$(".item_sample").clone().attr("class","item");
-                clone.children().children().children().first().text(array[i].place);
+                clone.children().children().children().first().text(array[i].place_name);
                 if (deceased_name.length>6) deceased_name=deceased_name.substr(0,7);
                 clone.children().children().children().eq(2).text(deceased_name+" ("+array[i].deceased.age+")");
                 clone.children().children().eq(1).children().first().text(array[i]._id);
