@@ -10,7 +10,6 @@ $(document).ready(function(){
     for(var i=0; i<1; i++){
         phone=parameters[i].slice(parameters[i].indexOf('=')+1,parameters[i].length);
 	}
-
     code_receive();
 });
 
@@ -41,7 +40,7 @@ function submit(){
         .then((data)=>{
             if(Math.floor(data.status/100)==2){
                 sessionStorage.setItem('Accesstoken', data.Accesstoken);
-                location.href='index.html';
+                location.href="index.html";
             }
             else{
                 var form = document.createElement('form');

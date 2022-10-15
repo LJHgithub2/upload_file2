@@ -356,6 +356,14 @@
 			width: 70%;
 		}
 
+		.row > .place-11 {
+			width: 50%;
+		}
+
+		.row > .place-111 {
+			width: 20%;
+		}
+
 		.row > .upload-1 {
             width: 50%;
         }

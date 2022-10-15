@@ -162,7 +162,15 @@ window.onpageshow = function (event) {
 function test(){
 	const formData = new FormData();
 	formData.enctype="multipart/form-data";
-	var fileInput = document.querySelector("#input-file")
+	var fileInput = document.querySelector("#input-file");
+	const date = new Date();
+
+	const year = date.getFullYear();
+	const month = ('0' + (date.getMonth() + 1)).slice(-2);
+	const day = ('0' + date.getDate()).slice(-2);
+	const dateStr = year + '-' + month + '-' + day;
+
+	console.log(dateStr);
 
 	formData.append('img',fileInput.files[0]) ;
 	formData.append('relation',$("#relation").val());
@@ -180,7 +188,7 @@ function test(){
 	formData.append('dofp_time', $("#dofp_time").val());
 	formData.append('buried', $("#buried").val());
 	formData.append('word', $("#upload_noti").val());
-	formData.append('created', "2022-01-01");
+	formData.append('created', dateStr);
 	fetch("https://www.aedo.co.kr/v1/obituary",{
 		method:"post", 
 		headers: {
@@ -188,6 +196,17 @@ function test(){
 		},
 		body:formData
 	})
-	.then((res)=>console.log(res))
+	.then((res)=>res.json())
+	.then((data)=>{
+		console.log(data);
+		if(Math.floor(data.status/100)==2){
+			alert("부고등록 성공하셨습니다.");
+			location.href="index.html";
+		}
+		else{
+			alert("부고등록 실패하셨습니다.");
+			location.href="upload.html";
+		}
+	});
 	return false;
 }

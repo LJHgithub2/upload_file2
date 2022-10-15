@@ -3,14 +3,16 @@ var img;
 $(document).ready(function(){
 	var user_id = unescape(location.href);
 	var parameters = (user_id.slice(user_id.indexOf('?') + 1, user_id.length)).split('&');
-	var place;
-    for(var i=0; i<2; i++){
+	var place, deceased;
+    for(var i=0; i<3; i++){
         if(i==0)
         user_id=parameters[i].slice(parameters[i].indexOf('=')+1,parameters[i].length);
         if(i==1)
         place=parameters[i].slice(parameters[i].indexOf('=')+1,parameters[i].length);
+        if(i==2)
+        deceased=parameters[i].slice(parameters[i].indexOf('=')+1,parameters[i].length);
 	}
-    console.log(place,user_id);
+    console.log(deceased.split('(')[0],place);
     var address="https://www.aedo.co.kr/v1/obituary";
 	fetch(address,{
 		method:"get", 
@@ -38,7 +40,7 @@ function set_info(){
     $(".title3").children().eq(0).text(info.eod.date);
     $(".deceased_info").children().eq(0).text(info.coffin.date+"  "+info.coffin.time);
     $(".deceased_info").children().eq(2).text(info.dofp.date+"  "+info.dofp.time);
-    $(".deceased_info").children().eq(4).text(info.eod.date+"  "+info.eod.time);
+    $(".deceased_info").children().eq(4).text(info.place.name+" "+info.place.number+"호실");
     $(".deceased_info").children().eq(6).text(info.buried);
     $(".word_box").text(info.word);
     //for(var i=0;i<5;i++)
@@ -56,15 +58,14 @@ function set_image(){
             'Accesstoken':sessionStorage.getItem('Accesstoken'),
         },
     })
-    .then((res)=>console.log(res))
-    /*.then((data)=> {
+    .then((res)=>res.blob())
+    .then((data)=> {
         const reader = new FileReader();
         const blob = data;
         reader.readAsDataURL(blob); 
-        var subblob=blob.slice(0,1024,"text/plain");
         reader.onloadend = () => {
             const base64data = reader.result;
             $(".img").css('background-image',"url('"+base64data+"')");
         }
-    })*/
+    })
 }

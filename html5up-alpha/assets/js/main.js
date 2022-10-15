@@ -115,5 +115,5 @@ window.onpageshow = function (event) {
     
 		location.href = document.referrer;
     }
-    
+
 }

@@ -27,7 +27,7 @@ window.onload = function () {
 			'Accesstoken':sessionStorage.getItem('Accesstoken'),
 		},
 	})
-	.then((res)=>res.json())
+	.then((res)=>res.json())  
 	.then((data) =>{
         list_lookup(data.result);
 	});
@@ -36,7 +36,15 @@ window.onload = function () {
 
 function view_detail(obj){
     var place=escape($(obj).parent().parent().parent().children().first().children().first().text());
-	location.href="detail_view.html?user_id="+$(obj).parent().prev().text()+"&place="+place;
+    var deceased = escape($(obj).parent().parent().parent().children().first().children().last().text().replace(/ /g, ''));
+    
+	location.href="detail_view.html?user_id="+$(obj).parent().prev().text()+"&place="+place+"&deceased_name="+deceased;
+
+    var decode = unescape(deceased);
+    console.log("디코딩 ->",decode);
+
+    var substring = decode.substring(0,3);
+    console.log("디코딩 서브",substring)
 }
 
 function search(){
@@ -84,7 +92,7 @@ function list_lookup(array){
             for(var i=list_count; i<list_count+add_num;i++){
                 deceased_name=array[i].deceased.name; 
                 var clone=$(".item_sample").clone().attr("class","item box");
-                clone.children().children().children().first().text(array[i].place_name);
+                clone.children().children().children().first().text(array[i].place.name);
                 if (deceased_name.length>6) deceased_name=deceased_name.substr(0,7);
                 clone.children().children().children().eq(2).text(deceased_name+" ("+array[i].deceased.age+")");
                 clone.children().children().eq(1).children().first().text(array[i]._id);
@@ -96,7 +104,7 @@ function list_lookup(array){
             for(var i=list_count; i<array.length;i++){
                 deceased_name=array[i].deceased.name; 
                 var clone=$(".item_sample").clone().attr("class","item");
-                clone.children().children().children().first().text(array[i].place_name);
+                clone.children().children().children().first().text(array[i].place.name);
                 if (deceased_name.length>6) deceased_name=deceased_name.substr(0,7);
                 clone.children().children().children().eq(2).text(deceased_name+" ("+array[i].deceased.age+")");
                 clone.children().children().eq(1).children().first().text(array[i]._id);
