@@ -4,8 +4,8 @@ var time;
 var timer_function;
 var address="https://www.aedo.co.kr/";
 $(document).ready(function(){
-	var phone_num = unescape(location.href);
-	var parameters = (phone_num.slice(phone_num.indexOf('?') + 1, phone_num.length)).split('&');
+	var uncode = unescape(location.href);
+	var parameters = (uncode.slice(uncode.indexOf('?') + 1, uncode.length)).split('&');
 	
     for(var i=0; i<1; i++){
         phone=parameters[i].slice(parameters[i].indexOf('=')+1,parameters[i].length);
@@ -43,26 +43,13 @@ function submit(){
                 location.href="index.html";
             }
             else{
-                var form = document.createElement('form');
-                form.setAttribute('method','get');
-                form.setAttribute('action',"signup.html");
-
-                var hiddenField=document.createElement("input");
-                hiddenField.setAttribute("type","hidden");
-                hiddenField.setAttribute("name","phone");
-                hiddenField.setAttribute("value",phone);
-                form.appendChild(hiddenField);
-
-
-                hiddenField=document.createElement("input");
-                hiddenField.setAttribute("type","hidden");
-                hiddenField.setAttribute("name","auth_number");
-                hiddenField.setAttribute("value",$("#auth_number").val());
-                form.appendChild(hiddenField);
-                form.setAttribute('type','hidden');
-                
-                document.body.appendChild(form);
-                form.submit();                
+                console.log(data.status);
+                if(data.status==403){
+                    alert("인증번호가 틀렸습니다.");
+                    return;
+                }
+                var auth_num=escape($("#auth_number").val());
+                location.href="signup.html?phone_num="+phone+"&sms_num="+auth_num;       
             }
         });
     

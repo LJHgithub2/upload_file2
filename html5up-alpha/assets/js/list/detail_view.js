@@ -12,7 +12,6 @@ $(document).ready(function(){
         if(i==2)
         deceased=parameters[i].slice(parameters[i].indexOf('=')+1,parameters[i].length);
 	}
-    console.log(deceased.split('(')[0],place);
     var address="https://www.aedo.co.kr/v1/obituary";
 	fetch(address,{
 		method:"get", 
@@ -34,7 +33,6 @@ $(document).ready(function(){
     
 });
 function set_info(){
-    console.log(info);
     $(".title2").children().eq(0).text(info.deceased.name);
     $(".title2").children().eq(1).text(info.deceased.age);
     $(".title3").children().eq(0).text(info.eod.date);
